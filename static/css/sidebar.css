@@ -1,0 +1,6 @@
+/* Blog sidebar CSS */
+
+.sidebar {
+	display: flex;
+	flex-flow: column nowrap;
+}

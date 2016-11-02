@@ -1,0 +1,69 @@
+/* Post list page CSS */
+
+/* This element in skeleton.html */
+.content-area {
+	max-width: 756px;
+	height: 100%;
+	padding: 0;
+}
+
+.main-area {
+	margin: 0;
+}
+
+.post-area {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+.post {
+	padding-bottom: 40px;
+}
+
+.post-title {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+h3 {
+	font-size: 2em;
+	color: #2B2B2A;
+}
+
+h3 a, a:hover, a:focus, a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.post-info {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.post-time-info {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+h6 {
+	color: #757575;
+}
+
+.post-content {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+p {
+	color: #2B2B2A;
+}
+
+.pages {
+	display: flex;
+	justify-content: center;
+}

@@ -1,17 +1,15 @@
 {% extends 'blog/base.html' %}
 {% load staticfiles %}
 
-{% block title %}
-<title>jinsol.me - home</title>
-{% endblock %}
-
 {% block css %}
-<!-- Index page CSS -->
-<link href={% static "css/index.css" %} rel="stylesheet">
+<!-- Website skeleton CSS -->
+<link href={% static "css/skeleton.css" %} rel="stylesheet">
+{% block page-css %}
+{% endblock %}
 {% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container top">
 	<div class="heading">
 		<h1>j</h1>
 		<h1>i</h1>
@@ -25,11 +23,15 @@
 	</div>
 	<nav class="navbar site-navigation">
 		<ul class="nav nav-justified nav-pills">
-			<li><a href="#">about</a></li>
-			<li><a href="blog">blog</a></li>
-			<li><a href="#">contact</a></li>
+			<li><a href="/#">about</a></li>
+			<li><a href="/blog">blog</a></li>
+			<li><a href="/#">contact</a></li>
 		</ul>
 	</nav>
+</div>
+<div class="container content-area">
+	{% block content %}
+	{% endblock %}
 </div>
 {% endblock %}
 

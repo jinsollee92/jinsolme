@@ -1,20 +1,22 @@
-/* Index page CSS */
+/* Skeleton CSS */
 
-.container {
+.top {
 	display: flex;
 	flex-flow: column wrap;
-	height: 100%;
-	width: 100%;
+	min-height: 30%;
+	max-width: 756px;
 	justify-content: center;
 	align-items: center;
+	padding-top: 20px;
 }
 
 .heading {
-	width: 60%;
-	max-width: 500px;
+	width: 100%;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 h1 {
@@ -25,6 +27,8 @@ h1 {
 
 nav {
 	max-width: 30%;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .nav li a {
