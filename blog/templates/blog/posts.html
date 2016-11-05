@@ -18,7 +18,7 @@
 		{% for post in post_list %}
 		<div class="post">
 			<div class="post-title">
-				<a href="/blog/post/{{ post.slug }}"><h3>{{ post.title }}</h3></a>
+				<a href="/blog/post/{{ post.slug }}/"><h3>{{ post.title }}</h3></a>
 			</div>
 			<div class="post-info">
 				<div class="post-time-info">
@@ -27,7 +27,9 @@
 					<h6>Last modified: {{ post.modified_timestamp }}</h6>
 					{% endif %}
 				</div>
-				<h6 class="post-category">Category: {{ post.category.name }}</h6>
+				<a href="/blog/category/{{ post.category.slug }}/">
+					<h6 class="post-category">Category: {{ post.category.name }}</h6>
+				</a>
 			</div>
 			<div class="post-content">
 				{{ post.text|safe }}
@@ -45,7 +47,7 @@
 					</li>
 					{% for page_num in page_range %}
 					<li{% if page_num == post_list.number %} class="disabled"{% endif %}>
-						<a href="/blog/?page={{ page_num }}">{{ page_num }}</a>
+						<a href="/blog/?page={{ page_num }}/">{{ page_num }}</a>
 					</li>
 					{% endfor %}
 					<li{% if not post_list.has_next %} class="disabled"{% endif %}>

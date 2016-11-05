@@ -5,11 +5,21 @@ from .models import *
 
 
 def index(request):
+	""" Landing page """
+
 	return render(request, 'blog/index.html')
 
 
-def blog(request, page=1):
-	all_posts = Post.objects.filter(published=True).order_by('-created_time')
+def blog(request, category=None, page=1):
+	""" List of all blog posts """
+
+	post_filter = {
+		"published": True
+	}
+	if category is not None:
+		post_filter["category__slug"] = category
+
+	all_posts = Post.objects.filter(**post_filter).order_by('-created_time')
 	post_paginator = Paginator(all_posts, 5)
 
 	page_range_start = max(1, page - 2)

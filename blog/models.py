@@ -26,7 +26,7 @@ class Post(models.Model):
 		null=True,
 		default=None,
 		)
-	slug = models.SlugField(allow_unicode=True, blank=True, null=True)
+	slug = models.SlugField(allow_unicode=True, unique=True, null=True, blank=True, default=None)
 	tags = TaggableManager(blank=True)
 
 	class Meta:
@@ -50,6 +50,7 @@ class Post(models.Model):
 # Post category
 class Category(models.Model):
 	name = models.CharField(max_length=30)
+	slug = models.SlugField(allow_unicode=True, unique=True, null=True, blank=True, default=None)
 
 	class Meta:
 		verbose_name_plural = 'categories'
