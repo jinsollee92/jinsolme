@@ -32,10 +32,20 @@
 				</a>
 			</div>
 			<div class="post-content">
-				{{ post.text|safe }}
+				{% if post_list|length > 1 %}
+					{{ post.text|safe|truncatewords_html:250 }}
+					<div class="read-more">
+						<a href="/blog/post/{{ post.slug }}/">
+							<h6>Read More</h6>
+						</a>
+					</div>
+				{% else %}
+					{{ post.text|safe }}
+				{% endif %}
 			</div>
 		</div>	{% endfor %}
 
+		{% if post_list|length > 1 %}
 		<!-- Post paginator -->
 		<div class="pages">
 			<nav aria-label="Page navigation">
@@ -58,6 +68,8 @@
 				</ul>
 			</nav>
 		</div>
+		{% endif %}
+
 	</div>
 
 

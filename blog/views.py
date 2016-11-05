@@ -10,7 +10,7 @@ def index(request):
 	return render(request, 'blog/index.html')
 
 
-def blog(request, category=None, page=1):
+def blog(request, category=None, page=1, post=None):
 	""" List of all blog posts """
 
 	post_filter = {
@@ -18,6 +18,8 @@ def blog(request, category=None, page=1):
 	}
 	if category is not None:
 		post_filter["category__slug"] = category
+	if post is not None:
+		post_filter["slug"] = post
 
 	all_posts = Post.objects.filter(**post_filter).order_by('-created_time')
 	post_paginator = Paginator(all_posts, 5)
