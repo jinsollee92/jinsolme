@@ -63,7 +63,28 @@ p {
 	color: #2B2B2A;
 }
 
+.post-content img {
+	max-width: 100%;
+}
+
 .pages {
 	display: flex;
 	justify-content: center;
+}
+
+.pagination li a {
+	background-color: #FFFDF7;
+	color: #757575;
+}
+
+.pagination li a:hover {
+	background-color: #FFFDF7;
+	color: #757575;
+	text-decoration: underline;
+}
+
+.pagination .disabled a, .pagination .disabled a:hover {
+	background-color: #F4F4F4;
+	color: #757575;
+	text-decoration: none;
 }
