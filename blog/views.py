@@ -24,6 +24,8 @@ def blog(request, category=None, page=1, post=None):
 	all_posts = Post.objects.filter(**post_filter).order_by('-created_time')
 	post_paginator = Paginator(all_posts, 5)
 
+	all_categories = Category.objects.all()
+
 	page_range_start = max(1, page - 2)
 	page_range_end = min(post_paginator.num_pages + 1, page + 3)
 	page_range = range(page_range_start, page_range_end)
@@ -35,7 +37,8 @@ def blog(request, category=None, page=1, post=None):
 
 	context = {
 		'post_list': post_list,
-		'page_range': page_range
+		'page_range': page_range,
+		'category_list': all_categories
 	}
 
 	return render(request, 'blog/posts.html', context)

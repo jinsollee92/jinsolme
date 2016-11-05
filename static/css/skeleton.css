@@ -41,3 +41,9 @@ nav {
 	background-color: transparent;
 	color: #2B2B2A;
 }
+
+.footer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
