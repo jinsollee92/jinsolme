@@ -47,3 +47,14 @@ nav {
 	justify-content: center;
 	width: 100%;
 }
+
+.footer i {
+	width: inherit;
+	height: inherit;
+	margin: 8px 8px 8px 8px;
+	color: #757575;
+}
+
+.footer i:hover {
+	color: #2B2B2A;
+}
