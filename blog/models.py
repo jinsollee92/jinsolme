@@ -14,7 +14,7 @@ class Post(models.Model):
 		'autosaveName': 'blog-text',
 		'focus': True
 		},
-		upload_to='/blog/media/upload/',
+		upload_to='blog',
 		allow_file_upload=True,
 		allow_image_upload=True)
 	created_time = models.DateTimeField(default=datetime.datetime.now)
@@ -60,6 +60,6 @@ class Category(models.Model):
 # Files associated with blog posts
 # http://paltman.com/how-to-setup-upload-handler-for-redactor/
 class File(models.Model):
-	upload = models.FileField(upload_to='/blog/media/upload/')
+	upload = models.FileField(upload_to='%Y/%m/%d')
 	created_time = models.DateTimeField(default=datetime.datetime.now)
 	is_image = models.BooleanField(default=True)
