@@ -1,0 +1,66 @@
+{% extends 'blog/skeleton.html' %}
+{% load staticfiles %}
+{% load static %}
+
+{% block title %}
+<title>jinsol.me - about</title>
+{% endblock %}
+
+{% block page-css %}
+<!-- About page CSS -->
+<link href={% static "css/about.css" %} rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<!-- Top picture -->
+<div class="profile-pic">
+	<img src="{% get_media_prefix %}profile.jpg">
+</div>
+
+<!-- About me paragraph -->
+<div class="about-me">
+	<h3>About Me</h3>
+	{{ about_post.text|safe }}
+</div>
+
+<!-- Skills tab panel -->
+<div id="skills">
+	<h3>Skills</h3>
+	<h6>orange = languages; green = tools/frameworks</h6>
+	<div id="skills-panel">
+		<ul class="nav nav-tabs nav-justified">
+			<li class="active">
+				<a href="#all" data-toggle="tab">All</a>
+			</li>
+			<li><a href="#proficient" data-toggle="tab">Proficient</a></li>
+			<li><a href="#intermediate" data-toggle="tab">Intermediate</a></li>
+			<li><a href="#beginner" data-toggle="tab">Beginner</a></li>
+		</ul>
+		<div class="well tab-content text-center">
+			<div class="tab-pane active" id="all"></div>
+			<div class="tab-pane" id="proficient"></div>
+			<div class="tab-pane" id="intermediate"></div>
+			<div class="tab-pane" id="beginner"></div>
+		</div>
+	</div>
+</div>
+
+<!-- Timeline format resume -->
+<div id="timeline">
+	<h3>Experience and Education</h3>
+	{{ resume_post.text|safe }}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- d3.js -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<!-- Use media files in script -->
+<script>var MEDIA_URL = "{{ MEDIA_URL|escapejs }}/about";</script>
+<!-- About page variables -->
+<script src={% static "js/about_vars.js" %}></script>
+<!-- Page javascript -->
+<script src={% static "js/about.js" %}></script>
+{% endblock %}

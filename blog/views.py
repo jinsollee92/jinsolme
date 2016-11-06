@@ -42,3 +42,23 @@ def blog(request, category=None, page=1, post=None):
 	}
 
 	return render(request, 'blog/posts.html', context)
+
+
+def about(request):
+	""" About (resume) page """
+
+	about_post = Post.objects.get(slug='about-page', published=False)
+	resume_post = Post.objects.get(slug='resume-page', published=False)
+
+	context = {
+		'about_post': about_post,
+		'resume_post': resume_post
+	}
+
+	return render(request, 'blog/about.html', context)
+
+
+def contact(request):
+	""" Contact page """
+
+	return render(request, 'blog/contact.html')

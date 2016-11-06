@@ -10,7 +10,7 @@ class Post(models.Model):
 	title = models.CharField(max_length=100, blank=True, default="No Title")
 	text = RedactorField(
 		redactor_options={
-		'autosave': '/blog/admincontent/saved/',
+		'autosave': 'blog/admincontent/saved/',
 		'autosaveName': 'blog-text',
 		'focus': True
 		},
@@ -61,6 +61,6 @@ class Category(models.Model):
 # Files associated with blog posts
 # http://paltman.com/how-to-setup-upload-handler-for-redactor/
 class File(models.Model):
-	upload = models.FileField(upload_to='%Y/%m/%d')
+	upload = models.FileField(upload_to='%Y/%m/%-d')
 	created_time = models.DateTimeField(default=datetime.datetime.now)
 	is_image = models.BooleanField(default=True)

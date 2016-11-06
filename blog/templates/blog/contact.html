@@ -1,0 +1,33 @@
+{% extends 'blog/skeleton.html' %}
+{% load staticfiles %}
+
+{% block title %}
+<title>jinsol.me - contact</title>
+{% endblock %}
+
+{% block page-css %}
+<!-- About page CSS -->
+<link href={% static "css/contact.css" %} rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="contact-info">
+	<h4>E-mail: <a href="mailto:jinsol.lee.92@gmail.com">jinsol dot lee dot 92 at gmail dot com</a></h4>
+	<h4>Phone: six four six, five four three, six three eight two (Google Voice)</h4>
+	<a href="https://github.com/jinsollee92/"><i class="fa fa-github fa-2x"></i></a>
+	<a href="https://www.linkedin.com/in/jinsollee0816"><i class="fa fa-linkedin-square fa-2x"></i></a>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- d3.js -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<!-- Use media files in script -->
+<script>var MEDIA_URL = "{{ MEDIA_URL|escapejs }}/about";</script>
+<!-- About page variables -->
+<script src={% static "js/about_vars.js" %}></script>
+<!-- Page javascript -->
+<script src={% static "js/about.js" %}></script>
+{% endblock %}

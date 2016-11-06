@@ -42,13 +42,24 @@ nav {
 	color: #2B2B2A;
 }
 
+/* Horizontal ruler inserted by redactor */
+hr {
+	border-color: #2B2B2A;
+	width: 70%;
+}
+
 .footer {
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: auto;
+	color: #757575;
 }
 
 .footer i {
+	display: inline-block;
 	width: inherit;
 	height: inherit;
 	margin: 8px 8px 8px 8px;
@@ -57,4 +68,13 @@ nav {
 
 .footer i:hover {
 	color: #2B2B2A;
+}
+
+a {
+	color: #757575;
+}
+
+a:hover {
+	color: #2B2B2A;
+	text-decoration: none;
 }

@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title %}
-<title>jinsol.me - blog - page {{ post_list.number }}</title>
+<title>jinsol.me - blog{% if post_list|length > 1 %} - {{ post.title }}{% endif %}</title>
 {% endblock %}
 
 {% block page-css %}
