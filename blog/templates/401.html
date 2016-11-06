@@ -1,0 +1,30 @@
+{% extends 'blog/skeleton.html' %}
+{% load staticfiles %}
+
+{% block title %}
+<title>jinsol.me</title>
+{% endblock %}
+
+{% block page-css %}
+<!-- Error page CSS -->
+<link href={% static "css/error.css" %} rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="message">
+	<h4>401 Unauthorized</h4>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- d3.js -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<!-- Use media files in script -->
+<script>var MEDIA_URL = "{{ MEDIA_URL|escapejs }}/about";</script>
+<!-- About page variables -->
+<script src={% static "js/about_vars.js" %}></script>
+<!-- Page javascript -->
+<script src={% static "js/about.js" %}></script>
+{% endblock %}

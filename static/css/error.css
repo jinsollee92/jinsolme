@@ -1,0 +1,29 @@
+/* Error page CSS */
+
+/* This element in skeleton.html */
+.content-area {
+	max-width: 756px;
+	height: 100%;
+	padding: 0;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+.contact-info {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+h4 {
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: #757575;
+	font-size: inherit;
+}
+
+p {
+	text-align: center;
+	color: #757575;
+}
